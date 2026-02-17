@@ -17,15 +17,15 @@
 
 
 :root {
-    --bg-primary: #3E2723;
-    --bg-secondary: #5C4033;
-    --text-primary: #FFF8DC;
-    --text-secondary: #F5F5DC;
-    --text-muted: #8B6F47;
+    --bg-primary: #F5F5DC;
+    --bg-secondary: #E8DCC4;
+    --text-primary: #2C2416;
+    --text-secondary: #3E3426;
+    --text-muted: #5C4A33;
     --accent-primary: #6B8E23;
     --accent-secondary: #87A96B;
     --accent-hover: #87A96B;
-    --border: #8B6F47;
+    --border: #B8A585;
 }
 
 
@@ -673,7 +673,7 @@ footer {
 .case-part.active {
     border-color: var(--accent-primary);
     box-shadow: 0 0 30px rgba(107, 142, 35, 0.5);
-    transform: translateZ(10px);
+    transform: translateZ(150px);
 }
 
 .case-body {
@@ -681,14 +681,14 @@ footer {
     height: 500px;
     left: 0;
     top: 0;
-    background: linear-gradient(135deg, #5C4033, #3E2723);
+    background: linear-gradient(135deg, #E8DCC4, #D4C4A8);
 }
 
 .case-front {
     width: 300px;
     height: 500px;
     transform: translateZ(120px);
-    background: linear-gradient(135deg, rgba(92, 64, 51, 0.95), rgba(62, 39, 35, 0.95));
+    background: linear-gradient(135deg, rgba(232, 220, 196, 0.95), rgba(212, 196, 168, 0.95));
 }
 
 .motherboard {
@@ -715,7 +715,7 @@ footer {
     left: 20px;
     top: 280px;
     transform: translateZ(40px) rotateX(5deg);
-    background: linear-gradient(135deg, #8B6F47, #5C4033);
+    background: linear-gradient(135deg, #A89575, #8B7960);
 }
 
 .ram {
@@ -733,7 +733,7 @@ footer {
     left: 50px;
     top: 400px;
     transform: translateZ(15px);
-    background: linear-gradient(135deg, #3E2723, #5C4033);
+    background: linear-gradient(135deg, #D4C4A8, #C4B498);
 }
 
 .fans {
@@ -758,7 +758,7 @@ footer {
 
 .component-label {
     position: absolute;
-    background-color: rgba(62, 39, 35, 0.9);
+    background-color: rgba(44, 36, 22, 0.9);
     color: var(--text-primary);
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
@@ -773,6 +773,7 @@ footer {
 .case-part:hover .component-label,
 .case-part.active .component-label {
     opacity: 1;
+    z-index: 100;
 }
 
 .label-case, .label-motherboard, .label-cpu, .label-gpu, .label-ram, .label-psu, .label-fans {
