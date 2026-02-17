@@ -490,6 +490,7 @@ footer {
     font-size: 3rem;
     margin-bottom: 1rem;
     animation: float 3s ease-in-out infinite;
+    will-change: transform;
 }
 
 @keyframes float {
