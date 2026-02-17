@@ -775,13 +775,11 @@ footer {
     opacity: 1;
 }
 
-.label-case { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-motherboard { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-cpu { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-gpu { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-ram { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-psu { top: -30px; left: 50%; transform: translateX(-50%); }
-.label-fans { top: -30px; left: 50%; transform: translateX(-50%); }
+.label-case, .label-motherboard, .label-cpu, .label-gpu, .label-ram, .label-psu, .label-fans {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 @media (max-width: 768px) {
     .pc-container {
