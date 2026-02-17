@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PC Build | Zachary</title>
+    <meta name="description" content="Interactive 3D showcase of my custom PC build with detailed component specifications.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>My Custom <span class="highlight">PC Build</span></h1>
+            <p class="tagline">Interactive 3D visualization of my development machine</p>
+            <a href="gear.html" class="back-link">← Back to Gear</a>
+        </section>
+
+        <section>
+            <div class="pc-container">
+                <div class="component-list">
+                    <div class="component-item" data-component="case">
+                        <h3>🖥️ Case</h3>
+                        <p><strong>FSP CMT195</strong> - Compact mid-tower case with excellent airflow and cable management</p>
+                    </div>
+
+                    <div class="component-item" data-component="motherboard">
+                        <h3>🔌 Motherboard</h3>
+                        <p><strong>Asus PRIME B550M-A WIFI-II</strong> - Micro-ATX motherboard with Wi-Fi 6 and PCIe 4.0 support</p>
+                    </div>
+
+                    <div class="component-item" data-component="cpu">
+                        <h3>⚡ CPU</h3>
+                        <p><strong>AMD Ryzen 5 5500</strong> - 6-core, 12-thread processor with 3.6 GHz base clock</p>
+                    </div>
+
+                    <div class="component-item" data-component="gpu">
+                        <h3>🎮 GPU</h3>
+                        <p><strong>AMD Radeon RX 6600</strong> - 8GB GDDR6 graphics card for gaming and development</p>
+                    </div>
+
+                    <div class="component-item" data-component="ram">
+                        <h3>💾 RAM</h3>
+                        <p><strong>KLEVV DDR4 32GB</strong> - High-speed 32GB memory for multitasking and development</p>
+                    </div>
+
+                    <div class="component-item" data-component="psu">
+                        <h3>🔋 Power Supply</h3>
+                        <p><strong>SilverStone ET550W</strong> - 550W 80+ Bronze certified power supply</p>
+                    </div>
+
+                    <div class="component-item" data-component="fans">
+                        <h3>❄️ Fans</h3>
+                        <p><strong>Corsair RS120 ARGB</strong> - RGB cooling fans for optimal airflow and aesthetics</p>
+                    </div>
+                </div>
+
+                <div class="pc-visualization">
+                    <div class="pc-case">
+                        <div class="case-part case-body" data-component="case">
+                            <span class="component-label label-case">FSP CMT195 Case</span>
+                        </div>
+                        <div class="case-part case-front" data-component="case">
+                        </div>
+                        <div class="case-part motherboard" data-component="motherboard">
+                            <span class="component-label label-motherboard">Asus PRIME B550M-A</span>
+                        </div>
+                        <div class="case-part cpu" data-component="cpu">
+                            <span class="component-label label-cpu">Ryzen 5 5500</span>
+                        </div>
+                        <div class="case-part gpu" data-component="gpu">
+                            <span class="component-label label-gpu">RX 6600</span>
+                        </div>
+                        <div class="case-part ram" data-component="ram">
+                            <span class="component-label label-ram">32GB DDR4</span>
+                        </div>
+                        <div class="case-part psu" data-component="psu">
+                            <span class="component-label label-psu">SilverStone 550W</span>
+                        </div>
+                        <div class="case-part fans" data-component="fans">
+                            <span class="component-label label-fans">Corsair RS120</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by Zachary | Year 10 @ Selwyn College Auckland</p>
+    </footer>
+
+    <script>
+        // Interactive component selection
+        const componentItems = document.querySelectorAll('.component-item');
+        const caseParts = document.querySelectorAll('.case-part');
+
+        // Add click handlers to component list items
+        componentItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const component = this.getAttribute('data-component');
+                selectComponent(component);
+            });
+        });
+
+        // Add click handlers to 3D visualization parts
+        caseParts.forEach(part => {
+            part.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const component = this.getAttribute('data-component');
+                selectComponent(component);
+            });
+        });
+
+        function selectComponent(component) {
+            // Remove active class from all items
+            componentItems.forEach(item => item.classList.remove('active'));
+            caseParts.forEach(part => part.classList.remove('active'));
+
+            // Add active class to selected component
+            componentItems.forEach(item => {
+                if (item.getAttribute('data-component') === component) {
+                    item.classList.add('active');
+                    // Scroll into view on mobile
+                    if (window.innerWidth <= 768) {
+                        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            });
+
+            caseParts.forEach(part => {
+                if (part.getAttribute('data-component') === component) {
+                    part.classList.add('active');
+                }
+            });
+        }
+
+        // Deselect when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.component-item') && !e.target.closest('.case-part')) {
+                componentItems.forEach(item => item.classList.remove('active'));
+                caseParts.forEach(part => part.classList.remove('active'));
+            }
+        });
+    </script>
+</body>
+</html>
