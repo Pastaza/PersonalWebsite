@@ -1,177 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.back-link {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-:root {
-    --bg-primary: #0d1117;
-    --bg-secondary: #161b22;
-    --text-primary: #f0f6fc;
-    --text-secondary: #8b949e;
-    --accent: #58a6ff;
-    --accent-hover: #79b8ff;
-    --border: #30363d;
+.back-link:hover {
+  color: #0056b3;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
+.gear-category {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s;
 }
 
-main {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-section {
-    margin-bottom: 3rem;
+.gear-item {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.3s;
+  animation: slideIn 0.5s;
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.gear-item:hover {
+  transform: scale(1.05);
 }
 
-h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.gear-icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
 }
 
-h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+.gear-icon:hover {
+  transform: rotate(20deg);
 }
 
-.highlight {
-    color: var(--accent);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.tagline {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-}
-
-.about p {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-}
-
-.about a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.about a:hover {
-    text-decoration: underline;
-}
-
-.skill-tags {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-}
-
-.skill {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    color: var(--text-primary);
-}
-
-.project-card {
-    display: block;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 1.25rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.project-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-.project-card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--accent);
-}
-
-.project-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.interest-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.75rem;
-}
-
-.interest-list li {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-}
-
-.github-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 0.75rem 1.25rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.github-link:hover {
-    border-color: var(--accent);
-    background-color: var(--border);
-}
-
-.github-link svg {
-    width: 20px;
-    height: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 2rem 1.25rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .interest-list {
-        grid-template-columns: 1fr;
-    }
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
