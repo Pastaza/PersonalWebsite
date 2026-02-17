@@ -759,7 +759,7 @@ footer {
 .component-label {
     position: absolute;
     background-color: rgba(44, 36, 22, 0.9);
-    color: var(--text-primary);
+    color: white;
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
     font-size: 0.85rem;
