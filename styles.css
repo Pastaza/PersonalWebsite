@@ -806,3 +806,17 @@ footer {
         padding: 1rem;
     }
 }
+
+/* Add this to your styles.css */
+
+body {
+  /* Ensure the body doesn't create wild scrollbars when it rotates */
+  overflow-x: hidden; 
+}
+
+.spin-it {
+  /* 5 spins = 5 * 360 degrees = 1800 degrees */
+  transform: rotate(1800deg);
+  /* 5 seconds duration, with a fun bouncy easing */
+  transition: transform 5s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+}
