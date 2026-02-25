@@ -105,6 +105,45 @@
     </footer>
 
     <script>
+        // The exact sequence you requested
+const secretCode = [
+  'ArrowUp', 'ArrowUp', 
+  'ArrowDown', 'ArrowDown', 
+  'ArrowLeft', 'ArrowRight', 
+  'ArrowLeft', 'ArrowRight', 
+  'a', 'b', 'a', 'b'
+];
+
+// Array to store the user's recent keystrokes
+let keySequence = [];
+
+document.addEventListener('keydown', (event) => {
+  // Push the pressed key into the array
+  // We use toLowerCase() for letters so 'A' or 'a' both work
+  keySequence.push(event.key.length === 1 ? event.key.toLowerCase() : event.key);
+
+  // Keep the array only as long as our secret code (12 keys)
+  keySequence = keySequence.slice(-secretCode.length);
+
+  // Check if the current sequence matches the secret code
+  if (JSON.stringify(keySequence) === JSON.stringify(secretCode)) {
+    triggerEasterEgg();
+    keySequence = []; // Reset the sequence so they can do it again!
+  }
+});
+
+function triggerEasterEgg() {
+  const body = document.body;
+  
+  // Add the class to trigger the CSS transition
+  body.classList.add('spin-it');
+  
+  // Remove the class after the animation finishes (5000ms = 5 seconds)
+  // This resets the website so the user can trigger the spin again if they want
+  setTimeout(() => {
+    body.classList.remove('spin-it');
+  }, 5000);
+}
         // Interactive component selection
         const componentItems = document.querySelectorAll('.component-item');
         const caseParts = document.querySelectorAll('.case-part');
