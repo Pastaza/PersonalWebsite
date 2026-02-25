@@ -6,6 +6,8 @@
     <title>Zachary | Personal Website</title>
     <meta name="description" content="Personal website of Zachary - developer, student, and human.">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
 </head>
 <body>
     <main>
@@ -14,6 +16,12 @@
             <p class="tagline">Welcome to my personal webpage! I'm Zachary, a passionate developer with an interest in various projects.</p>
         </section>
 
+        <section class="Github">
+            <div class="calendar">
+                Loading my GitHub activity...
+            </div>
+        </section>
+        
         <section class="projects">
             <h2>Projects</h2>
             <div class="project-grid">
@@ -53,5 +61,10 @@
     <footer>
         <p>Made by Zachary | Year 10 @ Selwyn College Auckland</p>
     </footer>
+    <script>
+        // Replace 'Pastaza' with your actual GitHub username
+        GitHubCalendar(".calendar", "Pastaza", { responsive: true });
+    </script>
 </body>
+
 </html>
